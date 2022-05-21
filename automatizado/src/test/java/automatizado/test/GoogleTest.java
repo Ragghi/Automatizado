@@ -13,7 +13,7 @@ public class GoogleTest
 {    
     private WebDriver driver;
     private final String URL_BASE = "https://google.com/";
-    private final String CAMINHO_DRIVER = "automatizado/src/test/java/automatizado/resource/chromedriver-v10104951";
+    private final String CAMINHO_DRIVER = "/Users/ragghi/Documents/Automatizado/automatizado/src/test/java/automatizado/resource/chromedriver-v10104951";
 
     private void iniciar()
     {
