@@ -9,20 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GoogleTest 
-{    
-    private WebDriver driver;
-    private final String URL_BASE = "https://google.com/";
-    private final String CAMINHO_DRIVER = "/Users/ragghi/Documents/Automatizado/automatizado/src/test/java/automatizado/resource/chromedriver-v10104951";
-
-    private void iniciar()
-    {
-        System.setProperty("webdriver.chrome.driver", CAMINHO_DRIVER);
-        driver = new ChromeDriver(); //abre o navegador
-        driver.manage().window().maximize(); //maximixa o navegador
-        driver.get(URL_BASE); //ao abrir o navegador será carregada a URL_BASE
-    }
-
+public class GoogleTest extends BaseTest
+{
     @Test
     public void devePesquisarNoGoogle()
     {
@@ -34,7 +22,5 @@ public class GoogleTest
         String resultado = driver.findElement(By.id("result-stats")).getText(); //Verifica o que contém dentro da variável result-stats do site
 
         assertTrue(resultado, resultado.contains("Aproximadamente")); //testa se está escrito Aproximadamente na variável pesquisada acima
-
-        driver.quit(); //fecha o navegador
     }
 }
