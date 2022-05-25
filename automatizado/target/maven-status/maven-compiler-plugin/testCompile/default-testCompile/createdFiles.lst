@@ -1,2 +1,4 @@
-automatizado/AppTest.class
+automatizado/page/BasePO.class
+automatizado/page/GooglePO.class
 automatizado/test/GoogleTest.class
+automatizado/test/BaseTest.class

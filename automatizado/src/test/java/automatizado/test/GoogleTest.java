@@ -4,10 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-
 import automatizado.page.GooglePO;
 
 public class GoogleTest extends BaseTest
@@ -23,14 +19,22 @@ public class GoogleTest extends BaseTest
 
 
     @Test
-    public void devePesquisarNoGoogle()
+    public void TC0001_deveSerPossivelPesquisarNoGoogleOTextoBatataFrita() //TC é teste control, um padrão utilizado para testes.
     {
-        iniciar();
-       
-       googlePage.inputPesquisa.sendKeys("Batata frita" + Keys.ENTER); //Digita Batata frita e realiza a busca
+        googlePage.pesquisar("Batata frita"); //Digita Batata frita e realiza a busca
 
-        String resultado = googlePage.divResultadoPesauisa.getText(); //Verifica o que contém dentro da variável result-stats do site
+        String resultado = googlePage.obterResultadoDaPesquisa(); //Verifica o que contém dentro da variável result-stats do site
 
         assertTrue(resultado, resultado.contains("Aproximadamente")); //testa se está escrito Aproximadamente na variável pesquisada acima
+    }
+
+    @Test
+    public void TC002_deveSerPossivelPesquisarNoGoogleOTextoNutella() //TC é teste control, um padrão utilizado para testes.
+    {
+        googlePage.pesquisar("Nutella"); //Digita Nutella e realiza a busca
+
+        String resultado = googlePage.obterResultadoDaPesquisa(); //Verifica o que contém dentro da variável result-stats do site
+
+        assertTrue(resultado, resultado.contains("resultados")); //testa se está escrito resultados na variável pesquisada acima
     }
 }
