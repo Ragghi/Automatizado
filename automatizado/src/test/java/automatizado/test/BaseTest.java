@@ -12,7 +12,7 @@ public abstract class BaseTest
     private static final String CAMINHO_DRIVER = "/Users/ragghi/Documents/Automatizado/automatizado/src/test/java/automatizado/resource/chromedriver-v10104951"; 
 
     @BeforeClass //chama o metodo antes de qq outro método
-    protected static void iniciar()
+    public static void iniciar()
     {
         System.setProperty("webdriver.chrome.driver", CAMINHO_DRIVER);
         driver = new ChromeDriver(); //abre o navegador
@@ -21,7 +21,7 @@ public abstract class BaseTest
     }
 
     @AfterClass
-    protected static void finalizar()
+    public static void finalizar()
     {
         driver.quit();
     }
